@@ -1,0 +1,24 @@
+# Archivos de configuración del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración del IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Dependencias y archivos temporales
+/vendor/
+/node_modules/
+/temp/
+*.log
+*.cache
+
+# Archivos de configuración sensibles (ejemplo)
+# config.php  # Comentado por ahora, pero considera excluirlo si tiene contraseñas
+
+# Otros
+*.bak
+*.swp
+*~ 
