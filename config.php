@@ -1,9 +1,9 @@
 <?php
 // Configuración de la base de datos
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'proy_cursor');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', 'localhost');     // Host de la base de datos
+define('DB_NAME', 'proy_cursor');      // Nombre de la base de datos
+define('DB_USER', 'root');   // Usuario de la base de datos
+define('DB_PASS', '');  // Contraseña de la base de datos
 
 // Configuración de seguridad
 define('MAX_LOGIN_ATTEMPTS', 5); // Máximo de intentos de login
