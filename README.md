@@ -31,7 +31,7 @@ Este es un sistema de login seguro desarrollado en PHP con características avan
    ```
 
 2. Importar la base de datos:
-   - Crear una base de datos llamada `proy_cursor`
+   - Crear una base de datos llamada `database`
    - Importar el archivo `database.sql`
 
 3. Configurar la conexión:
