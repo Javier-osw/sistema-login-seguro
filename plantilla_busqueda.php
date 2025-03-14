@@ -1,9 +1,13 @@
 <?php
 session_start();
 require_once 'config.php';
+require_once 'funciones.php';
 
 // Verificar si el usuario está logueado
 requireLogin();
+
+$username = $_SESSION['username'];
+$isRoot = ($username === 'root');
 
 // Inicializar variables
 $resultados = [];
@@ -95,15 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="principal.php">Volver al Inicio</a>
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="mi_cuenta.php">Mi Cuenta</a>
-                <a class="nav-link" href="logout.php">Cerrar Sesión</a>
-            </div>
-        </div>
-    </nav>
+    <?php renderizarMenu($username, $isRoot); ?>
 
     <div class="container mt-4">
         <?php if ($error): ?>

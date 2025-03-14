@@ -1,6 +1,13 @@
 <?php
 session_start();
 require_once 'config.php';
+require_once 'funciones.php';
+
+// Verificar si el usuario está logueado
+requireLogin();
+
+$username = $_SESSION['username'];
+$isRoot = ($username === 'root');
 
 // Verificar si el usuario está logueado y es root
 if (!isLoggedIn() || $_SESSION['username'] !== 'root') {
@@ -152,16 +159,7 @@ try {
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="#">Panel de Administración</a>
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="principal.php">Volver al Inicio</a>
-                <a class="nav-link" href="logout.php">Cerrar Sesión</a>
-            </div>
-        </div>
-    </nav>
-
+    <?php renderizarMenu($username, $isRoot); ?>
     <div class="container mt-4">
         <?php if ($mensaje): ?>
             <div class="alert alert-success"><?php echo htmlspecialchars($mensaje); ?></div>

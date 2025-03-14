@@ -1,9 +1,13 @@
 <?php
 session_start();
 require_once 'config.php';
+require_once 'funciones.php';
 
 // Verificar si el usuario está logueado
 requireLogin();
+
+$username = $_SESSION['username'];
+$isRoot = ($username === 'root');
 
 // Inicializar variables
 $mensaje = '';
@@ -92,31 +96,9 @@ try {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="principal.php">Sistema de Login</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="principal.php">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="mi_cuenta.php">Mi Cuenta</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout.php">Cerrar Sesión</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+<body >
+<?php renderizarMenu($username, $isRoot); ?>
+   
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-8 mx-auto">
