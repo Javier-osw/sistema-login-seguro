@@ -15,7 +15,7 @@ Este es un sistema de login seguro desarrollado en PHP con características avan
 
 ## Requisitos
 
-- PHP 7.4 o superior
+- PHP 7.4 o superior 
 - MySQL/MariaDB
 - Servidor web (Apache/Nginx)
 - Extensiones PHP requeridas:
